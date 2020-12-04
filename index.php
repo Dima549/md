@@ -1,5 +1,8 @@
 <?php
 
+ini_set("display_errors", 1);
+error_reporting (-1);
+
 require 'core/EquationInterface.php';
 require 'core/LogInterface.php';
 require 'core/LogAbstract.php';
@@ -7,15 +10,27 @@ require 'core/LogAbstract.php';
 require 'dimitriu/LinearEquation.php';
 require 'dimitriu/QuadraticEquation.php';
 require 'dimitriu/MyLog.php';
+require 'dimitriu/DimitriuException.php';
 
 $equation = new dimitriu\QuadraticEquation();
 try
 {
-    $result = $equation->solve(5, 14, 4);
+    echo "Enter 3 values \n\r";
+
+    $a = readline("Enter a: \n\r");
+    $b = readline("Enter b: \n\r");
+    $c = readline("Enter c: \n\r");
+
+    dimitriu\MyLog::Instance()::log("Equation: x=".$a."x2+".$b."x+".$c."\n\r");
+
+    $result = $equation->solve($a, $b, $c);
+
     $str = implode("; ", $result);
-    dimitriu\MyLog::Instance()::log($str);
+
+    dimitriu\MyLog::Instance()::log("Solution: ".$str."\n\r");
 }
-catch (Error $error)
+catch (dimitriu\DimitriuException $error)
 {
     dimitriu\MyLog::Instance()::log($error->getMessage());
 }
+dimitriu\MyLog::write();

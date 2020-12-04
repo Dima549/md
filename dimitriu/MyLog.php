@@ -5,7 +5,7 @@ namespace dimitriu;
 use core\LogAbstract;
 use core\LogInterface;
 
-class MyLog extends LogAbstract implements LogInterface
+class MyLog extends LogAbstract implements LogInterface 
 {
     public function _write()
     {

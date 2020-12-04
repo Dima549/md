@@ -14,24 +14,26 @@ class QuadraticEquation extends LinearEquation implements EquationInterface
 
     public function solve($a, $b, $c)
     {
+
         if ($a == 0)
         {
             return $this->LinearEquation($b, $c);
         }
 
         $d = $this->Discriminant($a, $b, $c);
-
+        MyLog::Instance()::log("It's a quadratic equation.\n\r");
         if ($d == 0)
         {
-            return $this->x = ($b * (-1)) / (2 * $a);
+            return $this->x = [($b * (-1)) / (2 * $a)];
         }
 
         if ($d < 0)
         {
-            throw new \Error('Equation doesn`t exist');
+            throw new DimitriuException("Equation doesn`t exist. \n\r");
         }
 
         return $this->x = [($b * (-1) - sqrt($d)) / (2 * $a), ($b * (-1) + sqrt($d)) / (2 * $a)];
+
     }
 
 }
