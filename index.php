@@ -11,6 +11,7 @@ require 'dimitriu/LinearEquation.php';
 require 'dimitriu/QuadraticEquation.php';
 require 'dimitriu/MyLog.php';
 require 'dimitriu/DimitriuException.php';
+MyLog::log("Версия программы ".file_get_contents("./version"));
 
 $equation = new dimitriu\QuadraticEquation();
 try
