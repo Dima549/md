@@ -3,15 +3,9 @@
 ini_set("display_errors", 1);
 error_reporting (-1);
 
-require 'core/EquationInterface.php';
-require 'core/LogInterface.php';
-require 'core/LogAbstract.php';
+require __DIR__ . '/vendor/autoload.php';
 
-require 'dimitriu/LinearEquation.php';
-require 'dimitriu/QuadraticEquation.php';
-require 'dimitriu/MyLog.php';
-require 'dimitriu/DimitriuException.php';
-MyLog::log("Версия программы ".file_get_contents("./version"));
+dimitriu\MyLog::Instance()::log("Версия программы ".file_get_contents("./version"));
 
 $equation = new dimitriu\QuadraticEquation();
 try

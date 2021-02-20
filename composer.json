@@ -1,0 +1,22 @@
+{
+    "name": "dima549/md",
+    "type": "project",
+    "authors": [{
+        "name": "Dimitriu Dmitrii",
+        "email": "dimitrriu.dima01@mail.ru"
+    }],
+    "repositories": [{
+            "type": "vcs",
+            "url": "https://github.com/rok9ru/trpo-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dima549/dimitriu.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "rok9ru/trpo-core": "^2.0",
+        "dima549/dimitriu": "^1.0"
+    }
+}
